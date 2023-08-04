@@ -1,8 +1,5 @@
 package com.assistencia.helpdesk.atendimento.models;
 
-import com.assistencia.helpdesk.atendimento.enums.UserLevel;
-import org.springframework.data.annotation.LastModifiedDate;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -13,7 +10,7 @@ import java.util.Objects;
 
 
 @Entity
-public class SystemUser implements Serializable {
+public class Tecnic implements Serializable {
     @Serial
     private static final long serialVersionUID = 1L;
 
@@ -24,21 +21,20 @@ public class SystemUser implements Serializable {
     private String phone;
     private String login;
     private String password;
-    private UserLevel userLevel;
     private Character status;
 
-    public SystemUser() {
+    public Tecnic() {
     }
 
-    public SystemUser(Integer id, String name, String phone, String login, String password, UserLevel userLevel, Character status) {
+    public Tecnic(Integer id, String name, String phone, String login, String password, Character status) {
         Id = id;
         this.name = name;
         this.phone = phone;
         this.login = login;
         this.password = password;
-        this.userLevel = userLevel;
         this.status = status;
     }
+
 
     public Integer getId() {
         return Id;
@@ -60,14 +56,9 @@ public class SystemUser implements Serializable {
         return password;
     }
 
-    public UserLevel getUserLevel() {
-        return userLevel;
-    }
-
     public Character getStatus() {
         return status;
     }
-
 
     public void setId(Integer id) {
         Id = id;
@@ -89,10 +80,6 @@ public class SystemUser implements Serializable {
         this.password = password;
     }
 
-    public void setUserLevel(UserLevel userLevel) {
-        this.userLevel = userLevel;
-    }
-
     public void setStatus(Character status) {
         this.status = status;
     }
@@ -102,8 +89,8 @@ public class SystemUser implements Serializable {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        SystemUser that = (SystemUser) o;
-        return Objects.equals(Id, that.Id);
+        Tecnic tecnic = (Tecnic) o;
+        return Objects.equals(Id, tecnic.Id);
     }
 
     @Override

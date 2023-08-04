@@ -25,14 +25,14 @@ public class Customer implements Serializable {
     private String phoneNumber;
     private String email;
 
-    @OneToMany(mappedBy = "customer")
-    private List<Atendimento> atendimento = new ArrayList<>();
+ //   @OneToMany(mappedBy = "customer")
+   // private List<Order> atendimento = new ArrayList<>();
 
     public Customer() {
     }
 
     public Customer(Integer id, String name, String CPF, String address, String numberAdress, String complAdress,
-                    String city, String uf, String phoneNumber, String email, List<Atendimento> atendimento) {
+                    String city, String uf, String phoneNumber, String email) {
         this.id = id;
         this.name = name;
         this.CPF = CPF;
@@ -43,8 +43,7 @@ public class Customer implements Serializable {
         this.uf = uf;
         this.phoneNumber = phoneNumber;
         this.email = email;
-        this.atendimento = atendimento;
-    }
+           }
 
     public Integer getId() {
         return id;
@@ -86,9 +85,7 @@ public class Customer implements Serializable {
         return email;
     }
 
-    public List<Atendimento> getAtendimento() {
-        return atendimento;
-    }
+
 
     public void setId(Integer id) {
         this.id = id;
@@ -130,9 +127,7 @@ public class Customer implements Serializable {
         this.email = email;
     }
 
-    public void setAtendimento(List<Atendimento> atendimento) {
-        this.atendimento = atendimento;
-    }
+
 
 
     @Override
